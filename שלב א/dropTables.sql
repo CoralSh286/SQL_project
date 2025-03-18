@@ -1,0 +1,9 @@
+DROP TABLE examination;
+DROP TABLE performs;
+DROP TABLE treated_by;
+DROP TABLE patient_report;
+DROP TABLE patient;
+DROP TABLE nurse;
+DROP TABLE doctor;
+DROP TABLE bed;
+DROP TABLE treatment;
