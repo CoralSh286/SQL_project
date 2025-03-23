@@ -1,68 +1,83 @@
- CREATE TABLE doctor (
-    d_id INT PRIMARY KEY,
-    d_first_name VARCHAR(50),
-    d_last_name VARCHAR(50),
-    gender VARCHAR(10),
-    specialization VARCHAR(100)
+CREATE TABLE nurse
+(
+  n_first_name INT NOT NULL,
+  n_last_name INT NOT NULL,
+  n_id INT NOT NULL,
+  shift_schedule INT NOT NULL,
+  phone_number INT NOT NULL,
+  PRIMARY KEY (n_id)
 );
 
-CREATE TABLE nurse (
-    n_id INT PRIMARY KEY,
-    n_first_name VARCHAR(50),
-    n_last_name VARCHAR(50),
-    shift_schedule VARCHAR(100),
-    phone_number VARCHAR(15)
+CREATE TABLE threatment
+(
+  t_id INT NOT NULL,
+  name INT NOT NULL,
+  wait_after INT NOT NULL,
+  PRIMARY KEY (t_id)
 );
 
-CREATE TABLE bed (
-    b_id INT PRIMARY KEY,
-    num_room INT,
-    is_available BOOLEAN
+CREATE TABLE doctor
+(
+  d_id INT NOT NULL,
+  d_first_name INT NOT NULL,
+  d_last_name INT NOT NULL,
+  gender INT NOT NULL,
+  specialization INT NOT NULL,
+  PRIMARY KEY (d_id)
 );
 
-CREATE TABLE patient (
-    p_id INT PRIMARY KEY,
-    p_first_name VARCHAR(50),
-    p_last_name VARCHAR(50),
-    date_of_birth DATE,
-    b_id INT,
-    FOREIGN KEY (b_id) REFERENCES bed(b_id) ON DELETE SET NULL
+CREATE TABLE bed
+(
+  b_id INT NOT NULL,
+  num_room INT NOT NULL,
+  is_available INT NOT NULL,
+  PRIMARY KEY (b_id)
 );
 
-CREATE TABLE treatment (
-    t_id INT PRIMARY KEY,
-    name VARCHAR(100),
-    wait_after INT
+CREATE TABLE performs
+(
+  t_id INT NOT NULL,
+  d_id INT NOT NULL,
+  PRIMARY KEY (t_id, d_id),
+  FOREIGN KEY (t_id) REFERENCES threatment(t_id),
+  FOREIGN KEY (d_id) REFERENCES doctor(d_id)
 );
 
-CREATE TABLE patient_report (
-    r_id INT PRIMARY KEY,
-    report_type VARCHAR(100),
-    date DATE,
-    p_id INT,
-    FOREIGN KEY (p_id) REFERENCES patient(p_id) ON DELETE CASCADE
+CREATE TABLE patient
+(
+  p_id INT NOT NULL,
+  p_first_name INT NOT NULL,
+  p_last_name INT NOT NULL,
+  date_of_birth INT NOT NULL,
+  b_id INT NOT NULL,
+  PRIMARY KEY (p_id),
+  FOREIGN KEY (b_id) REFERENCES bed(b_id)
 );
 
-CREATE TABLE examination (
-    p_id INT,
-    n_id INT,
-    PRIMARY KEY (p_id, n_id),
-    FOREIGN KEY (p_id) REFERENCES patient(p_id) ON DELETE CASCADE,
-    FOREIGN KEY (n_id) REFERENCES nurse(n_id) ON DELETE CASCADE
+CREATE TABLE ptient_report
+(
+  report_type INT NOT NULL,
+  date INT NOT NULL,
+  r_id INT NOT NULL,
+  p_id INT NOT NULL,
+  PRIMARY KEY (r_id),
+  FOREIGN KEY (p_id) REFERENCES patient(p_id)
 );
 
-CREATE TABLE performs (
-    t_id INT,
-    d_id INT,
-    PRIMARY KEY (t_id, d_id),
-    FOREIGN KEY (t_id) REFERENCES treatment(t_id) ON DELETE CASCADE,
-    FOREIGN KEY (d_id) REFERENCES doctor(d_id) ON DELETE CASCADE
+CREATE TABLE examination
+(
+  p_id INT NOT NULL,
+  n_id INT NOT NULL,
+  PRIMARY KEY (p_id, n_id),
+  FOREIGN KEY (p_id) REFERENCES patient(p_id),
+  FOREIGN KEY (n_id) REFERENCES nurse(n_id)
 );
 
-CREATE TABLE treated_by (
-    p_id INT,
-    t_id INT,
-    PRIMARY KEY (p_id, t_id),
-    FOREIGN KEY (p_id) REFERENCES patient(p_id) ON DELETE CASCADE,
-    FOREIGN KEY (t_id) REFERENCES treatment(t_id) ON DELETE CASCADE
+CREATE TABLE treated_by
+(
+  p_id INT NOT NULL,
+  t_id INT NOT NULL,
+  PRIMARY KEY (p_id, t_id),
+  FOREIGN KEY (p_id) REFERENCES patient(p_id),
+  FOREIGN KEY (t_id) REFERENCES threatment(t_id)
 );
