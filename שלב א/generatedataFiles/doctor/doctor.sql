@@ -1,0 +1,480 @@
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (401,'Madeline','Hinton','female','Orthopedics'),
+  (402,'Sebastian','Greene','female','Orthopedics'),
+  (403,'Jamal','Stafford','female','Orthopedics'),
+  (404,'Wyatt','Orr','male','Orthopedics'),
+  (405,'Medge','Wilder','female','Pediatrics'),
+  (406,'Marny','Bryant','male','Orthopedics'),
+  (407,'Shelby','Sosa','female','Orthopedics'),
+  (408,'Zephr','Rasmussen','male','Pediatrics'),
+  (409,'Dustin','Donovan','female','Pediatrics'),
+  (410,'Jessica','Mccoy','male','Orthopedics');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (411,'Tyrone','Guerra','female','Oncology'),
+  (412,'Hyatt','Mathis','female','Pediatrics'),
+  (413,'Paul','Huber','male','Oncology'),
+  (414,'Signe','Hardin','male','Pediatrics'),
+  (415,'Cally','Gomez','male','Neurology'),
+  (416,'Aurora','Jordan','female','Oncology'),
+  (417,'Jelani','Robbins','male','Pediatrics'),
+  (418,'Stephanie','Duran','female','Orthopedics'),
+  (419,'Henry','Pacheco','male','Cardiology'),
+  (420,'Tara','May','male','Cardiology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (421,'Cadman','Reed','female','Orthopedics'),
+  (422,'Keegan','Lambert','male','Oncology'),
+  (423,'Maxwell','Trujillo','female','Pediatrics'),
+  (424,'Talon','Salazar','male','Neurology'),
+  (425,'Nyssa','Bender','male','Pediatrics'),
+  (426,'Louis','Coleman','female','Oncology'),
+  (427,'Raphael','Thompson','male','Oncology'),
+  (428,'Hilary','Elliott','female','Neurology'),
+  (429,'Igor','Sparks','male','Neurology'),
+  (430,'Harlan','Ellison','male','Neurology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (431,'Lareina','Blair','male','Pediatrics'),
+  (432,'Lila','Anthony','female','Cardiology'),
+  (433,'Reece','Mcgowan','male','Orthopedics'),
+  (434,'Emmanuel','Leon','male','Pediatrics'),
+  (435,'Myles','Baxter','female','Orthopedics'),
+  (436,'Zahir','Mercer','male','Orthopedics'),
+  (437,'Roanna','Caldwell','female','Pediatrics'),
+  (438,'Ian','Sears','female','Pediatrics'),
+  (439,'Travis','Stephenson','female','Oncology'),
+  (440,'Adrian','Christensen','female','Oncology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (441,'Gabriel','Gallagher','male','Cardiology'),
+  (442,'Yoshi','Calderon','male','Orthopedics'),
+  (443,'Linda','Duke','male','Cardiology'),
+  (444,'Ray','Mcpherson','female','Orthopedics'),
+  (445,'Hannah','Cotton','female','Orthopedics'),
+  (446,'Amaya','Faulkner','female','Orthopedics'),
+  (447,'Colette','Taylor','male','Oncology'),
+  (448,'Ivor','Conley','male','Pediatrics'),
+  (449,'Kadeem','Nielsen','male','Pediatrics'),
+  (450,'Francis','Hatfield','male','Neurology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (451,'Barry','West','male','Oncology'),
+  (452,'Nathaniel','Buchanan','male','Cardiology'),
+  (453,'Chantale','Strickland','male','Neurology'),
+  (454,'Rhoda','Combs','male','Neurology'),
+  (455,'Haley','Wade','male','Cardiology'),
+  (456,'Ruth','Craig','male','Cardiology'),
+  (457,'Hyatt','Castaneda','female','Neurology'),
+  (458,'Lars','Moss','male','Pediatrics'),
+  (459,'Kimberley','Vargas','male','Oncology'),
+  (460,'Katell','Sullivan','female','Oncology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (461,'Serina','Meadows','male','Orthopedics'),
+  (462,'Garth','Ochoa','male','Oncology'),
+  (463,'Violet','Dorsey','female','Oncology'),
+  (464,'Velma','Cain','female','Oncology'),
+  (465,'Shaine','Finley','female','Oncology'),
+  (466,'Benedict','Rich','female','Pediatrics'),
+  (467,'Brendan','Moreno','male','Neurology'),
+  (468,'Arsenio','Swanson','female','Cardiology'),
+  (469,'Kevin','Ramsey','female','Pediatrics'),
+  (470,'Hayley','Perry','female','Oncology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (471,'Stacy','Hendrix','male','Neurology'),
+  (472,'Hammett','Watkins','male','Oncology'),
+  (473,'Zane','Alford','female','Orthopedics'),
+  (474,'Stuart','Macdonald','female','Oncology'),
+  (475,'Katelyn','Chavez','female','Cardiology'),
+  (476,'Mollie','Arnold','female','Neurology'),
+  (477,'Tarik','Flynn','male','Cardiology'),
+  (478,'Harper','Davis','male','Pediatrics'),
+  (479,'Tarik','Marks','female','Oncology'),
+  (480,'Declan','Dodson','male','Neurology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (481,'Xantha','Green','male','Cardiology'),
+  (482,'Darrel','Frost','male','Neurology'),
+  (483,'Pamela','Vang','female','Cardiology'),
+  (484,'Aimee','Johns','male','Oncology'),
+  (485,'Linus','Bass','male','Oncology'),
+  (486,'Camille','Lopez','male','Pediatrics'),
+  (487,'Kirk','Reilly','male','Cardiology'),
+  (488,'Hadassah','Hooper','female','Cardiology'),
+  (489,'Eagan','Parker','male','Orthopedics'),
+  (490,'Tad','Cooper','male','Oncology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (491,'Jamal','Zamora','male','Orthopedics'),
+  (492,'Graiden','Whitney','male','Neurology'),
+  (493,'Emerald','Mcintyre','male','Neurology'),
+  (494,'Nasim','Levy','male','Neurology'),
+  (495,'Malik','Miranda','female','Neurology'),
+  (496,'Marsden','Buckner','male','Oncology'),
+  (497,'Brody','Kinney','male','Oncology'),
+  (498,'Kevin','Russo','female','Pediatrics'),
+  (499,'Caldwell','Brooks','male','Oncology'),
+  (500,'Hollee','Short','female','Orthopedics');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (501,'Tyrone','Gutierrez','female','Pediatrics'),
+  (502,'Baxter','Poole','male','Oncology'),
+  (503,'Lev','Castillo','female','Pediatrics'),
+  (504,'Frances','Hyde','female','Orthopedics'),
+  (505,'Odessa','Hickman','male','Pediatrics'),
+  (506,'Jemima','Taylor','male','Cardiology'),
+  (507,'Reuben','Ferguson','female','Cardiology'),
+  (508,'Carlos','Alston','female','Pediatrics'),
+  (509,'Ezekiel','Fox','female','Oncology'),
+  (510,'Amos','Fulton','male','Neurology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (511,'Candace','Mack','male','Cardiology'),
+  (512,'Selma','Franco','female','Pediatrics'),
+  (513,'Marny','Pate','female','Orthopedics'),
+  (514,'Palmer','Nieves','male','Pediatrics'),
+  (515,'Odysseus','Patrick','female','Cardiology'),
+  (516,'Hector','Fowler','male','Oncology'),
+  (517,'Francis','Nash','male','Orthopedics'),
+  (518,'Astra','Raymond','female','Orthopedics'),
+  (519,'Cheryl','Estes','male','Oncology'),
+  (520,'David','Dodson','male','Neurology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (521,'Madison','Aguirre','male','Oncology'),
+  (522,'Michael','Bowen','male','Pediatrics'),
+  (523,'Unity','Gardner','male','Cardiology'),
+  (524,'Armando','Durham','male','Orthopedics'),
+  (525,'Steven','Foster','female','Cardiology'),
+  (526,'Kyla','Kaufman','male','Pediatrics'),
+  (527,'Basil','Livingston','male','Oncology'),
+  (528,'Anne','Wolfe','male','Pediatrics'),
+  (529,'Ian','Gibson','female','Oncology'),
+  (530,'Quail','Downs','female','Pediatrics');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (531,'Scott','Guy','female','Pediatrics'),
+  (532,'Jacob','Chen','male','Pediatrics'),
+  (533,'Coby','Hahn','male','Oncology'),
+  (534,'Kane','Merritt','female','Orthopedics'),
+  (535,'Chancellor','Decker','female','Pediatrics'),
+  (536,'Whoopi','Stewart','male','Oncology'),
+  (537,'Stuart','Mcfadden','female','Cardiology'),
+  (538,'Dorian','Chang','female','Pediatrics'),
+  (539,'Micah','Mclean','female','Orthopedics'),
+  (540,'Jamalia','Reid','female','Pediatrics');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (541,'Hector','Velez','female','Orthopedics'),
+  (542,'Jason','Black','female','Neurology'),
+  (543,'Lucian','Wooten','male','Oncology'),
+  (544,'Remedios','Hansen','male','Pediatrics'),
+  (545,'Alec','Mckee','female','Pediatrics'),
+  (546,'Jeanette','Hanson','male','Neurology'),
+  (547,'Beverly','Gordon','female','Pediatrics'),
+  (548,'Quentin','Wells','male','Orthopedics'),
+  (549,'Ila','Powell','female','Oncology'),
+  (550,'Jakeem','Cox','female','Cardiology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (551,'Aiko','Skinner','female','Cardiology'),
+  (552,'Alisa','Glenn','female','Neurology'),
+  (553,'Francis','Mayo','male','Pediatrics'),
+  (554,'Melvin','Lamb','male','Neurology'),
+  (555,'Clark','Ware','male','Cardiology'),
+  (556,'Hu','Cooper','female','Neurology'),
+  (557,'Burke','Flores','male','Pediatrics'),
+  (558,'Paula','Butler','male','Cardiology'),
+  (559,'Jade','Eaton','male','Orthopedics'),
+  (560,'Geoffrey','Roman','female','Oncology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (561,'Steel','Dotson','male','Neurology'),
+  (562,'Nehru','Sanford','female','Cardiology'),
+  (563,'Samuel','Faulkner','female','Oncology'),
+  (564,'Joseph','Ingram','female','Neurology'),
+  (565,'Charde','Reilly','female','Cardiology'),
+  (566,'Graiden','Walsh','female','Neurology'),
+  (567,'Jerry','Greene','female','Oncology'),
+  (568,'Dora','Padilla','female','Orthopedics'),
+  (569,'Chandler','Bruce','female','Cardiology'),
+  (570,'Maya','Dotson','male','Cardiology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (571,'Ignatius','Jackson','male','Pediatrics'),
+  (572,'Jordan','Conrad','male','Cardiology'),
+  (573,'Hayfa','Castro','male','Orthopedics'),
+  (574,'Althea','Snow','male','Neurology'),
+  (575,'Zeus','Montgomery','male','Pediatrics'),
+  (576,'Quon','Williams','female','Cardiology'),
+  (577,'Sharon','Bass','female','Pediatrics'),
+  (578,'Bianca','Richmond','female','Oncology'),
+  (579,'Oprah','Oliver','male','Cardiology'),
+  (580,'Joshua','Hudson','male','Cardiology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (581,'Warren','Collier','female','Pediatrics'),
+  (582,'Stephen','Simpson','male','Oncology'),
+  (583,'Phoebe','Short','female','Orthopedics'),
+  (584,'Molly','Horne','male','Neurology'),
+  (585,'Leigh','Lawson','female','Orthopedics'),
+  (586,'Sophia','Moran','female','Oncology'),
+  (587,'Darrel','Reyes','male','Cardiology'),
+  (588,'Nissim','Abbott','male','Pediatrics'),
+  (589,'Haley','Sharpe','female','Orthopedics'),
+  (590,'Minerva','Maldonado','male','Cardiology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (591,'Nathaniel','Mathis','female','Orthopedics'),
+  (592,'Cora','Bernard','female','Neurology'),
+  (593,'Alden','Perry','male','Oncology'),
+  (594,'Sheila','Holmes','female','Orthopedics'),
+  (595,'Bethany','Hicks','male','Pediatrics'),
+  (596,'Fulton','Barber','female','Orthopedics'),
+  (597,'Finn','Rush','male','Cardiology'),
+  (598,'Neville','Deleon','female','Oncology'),
+  (599,'Austin','Jennings','female','Neurology'),
+  (600,'Thaddeus','Mcfadden','male','Neurology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (601,'Allen','Roach','female','Pediatrics'),
+  (602,'Boris','Landry','male','Orthopedics'),
+  (603,'Hilda','Page','female','Cardiology'),
+  (604,'Hamish','Duke','female','Cardiology'),
+  (605,'Jayme','Wise','female','Orthopedics'),
+  (606,'Darrel','Rojas','male','Neurology'),
+  (607,'Xander','Morgan','male','Neurology'),
+  (608,'Rogan','Gill','male','Oncology'),
+  (609,'Russell','Munoz','male','Cardiology'),
+  (610,'Debra','Buckley','female','Cardiology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (611,'Hadassah','Houston','male','Cardiology'),
+  (612,'Ferris','Ruiz','female','Neurology'),
+  (613,'Duncan','Elliott','female','Pediatrics'),
+  (614,'Harding','Black','male','Cardiology'),
+  (615,'Inga','Hubbard','male','Orthopedics'),
+  (616,'Wyatt','Smith','male','Neurology'),
+  (617,'Urielle','Brooks','male','Pediatrics'),
+  (618,'Nadine','Mckenzie','male','Neurology'),
+  (619,'Carlos','Emerson','female','Neurology'),
+  (620,'Lionel','Russell','female','Neurology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (621,'Abra','Hyde','female','Neurology'),
+  (622,'Branden','Mccoy','male','Oncology'),
+  (623,'Linus','Dickerson','female','Neurology'),
+  (624,'Idola','Smith','male','Oncology'),
+  (625,'Juliet','Houston','male','Oncology'),
+  (626,'Emily','Cleveland','male','Orthopedics'),
+  (627,'Thomas','Puckett','male','Orthopedics'),
+  (628,'Haley','Fletcher','female','Neurology'),
+  (629,'Caesar','Hester','male','Cardiology'),
+  (630,'Elvis','Medina','male','Cardiology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (631,'Catherine','Mckee','female','Orthopedics'),
+  (632,'Bianca','Cardenas','female','Cardiology'),
+  (633,'Demetria','Underwood','female','Oncology'),
+  (634,'Yeo','Hooper','male','Cardiology'),
+  (635,'Yvonne','Medina','male','Neurology'),
+  (636,'Whoopi','Snow','female','Cardiology'),
+  (637,'Orson','Sandoval','female','Oncology'),
+  (638,'Wade','Ramos','male','Oncology'),
+  (639,'Ivan','Dudley','female','Neurology'),
+  (640,'Ava','Garrison','female','Orthopedics');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (641,'Hunter','Hodge','female','Cardiology'),
+  (642,'Omar','Castro','female','Pediatrics'),
+  (643,'Nasim','Ferrell','male','Cardiology'),
+  (644,'Jonas','Love','female','Orthopedics'),
+  (645,'Rama','Maxwell','male','Cardiology'),
+  (646,'Lyle','Rosales','male','Pediatrics'),
+  (647,'Camden','Frederick','female','Pediatrics'),
+  (648,'Doris','Cross','female','Orthopedics'),
+  (649,'Kaseem','Hurley','male','Orthopedics'),
+  (650,'Keegan','Ewing','male','Oncology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (651,'Linus','Lopez','female','Neurology'),
+  (652,'Keiko','Snyder','female','Neurology'),
+  (653,'Charissa','Hernandez','male','Oncology'),
+  (654,'Armando','Morris','female','Oncology'),
+  (655,'Yetta','Kaufman','female','Cardiology'),
+  (656,'Noah','Campos','male','Cardiology'),
+  (657,'Ignatius','Daniels','female','Cardiology'),
+  (658,'Uta','Booker','female','Oncology'),
+  (659,'Zephania','Franco','female','Neurology'),
+  (660,'Sage','Palmer','male','Pediatrics');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (661,'Maryam','Nixon','male','Oncology'),
+  (662,'Yael','Bishop','female','Neurology'),
+  (663,'Galvin','Clemons','male','Cardiology'),
+  (664,'Brett','Lyons','male','Cardiology'),
+  (665,'Reagan','Soto','female','Neurology'),
+  (666,'Kamal','Wilson','female','Pediatrics'),
+  (667,'David','Bowen','female','Cardiology'),
+  (668,'Daryl','Mack','female','Cardiology'),
+  (669,'Coby','Summers','male','Orthopedics'),
+  (670,'Patience','Randall','male','Pediatrics');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (671,'Lydia','Travis','male','Pediatrics'),
+  (672,'Sean','Melendez','male','Cardiology'),
+  (673,'Noelle','Ewing','male','Neurology'),
+  (674,'Reece','Salazar','female','Pediatrics'),
+  (675,'Warren','Duke','male','Neurology'),
+  (676,'Jolene','Garza','male','Cardiology'),
+  (677,'Benedict','Davis','male','Orthopedics'),
+  (678,'Aristotle','Cote','male','Orthopedics'),
+  (679,'Camille','Salinas','male','Orthopedics'),
+  (680,'Ian','Cole','male','Cardiology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (681,'Germaine','Carter','male','Orthopedics'),
+  (682,'Morgan','Bolton','female','Cardiology'),
+  (683,'Cailin','Meyer','female','Oncology'),
+  (684,'Brooke','Mcintyre','male','Neurology'),
+  (685,'Avram','Williamson','female','Neurology'),
+  (686,'Cairo','Kaufman','female','Orthopedics'),
+  (687,'Mechelle','Dudley','female','Neurology'),
+  (688,'Libby','Russell','male','Neurology'),
+  (689,'Mufutau','Burks','male','Orthopedics'),
+  (690,'Katell','Jacobs','male','Neurology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (691,'Morgan','Kramer','female','Pediatrics'),
+  (692,'Hammett','Fowler','male','Oncology'),
+  (693,'Andrew','Bryant','female','Pediatrics'),
+  (694,'Elmo','Jimenez','female','Orthopedics'),
+  (695,'Olympia','Russo','male','Cardiology'),
+  (696,'Risa','Dixon','male','Cardiology'),
+  (697,'Cathleen','Garrison','male','Cardiology'),
+  (698,'Rogan','Chavez','male','Neurology'),
+  (699,'Adrian','Bass','male','Cardiology'),
+  (700,'Kylynn','Shepherd','female','Neurology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (701,'Carlos','Delaney','female','Pediatrics'),
+  (702,'Maxine','Nguyen','female','Orthopedics'),
+  (703,'Kristen','Edwards','female','Cardiology'),
+  (704,'Briar','Haley','female','Cardiology'),
+  (705,'Ignatius','Vargas','female','Oncology'),
+  (706,'Coby','Schultz','female','Cardiology'),
+  (707,'Wyoming','Riddle','male','Pediatrics'),
+  (708,'Channing','Merritt','male','Oncology'),
+  (709,'Anastasia','Cote','male','Pediatrics'),
+  (710,'Lois','Madden','male','Neurology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (711,'Willow','Melton','male','Cardiology'),
+  (712,'Ainsley','Allison','female','Cardiology'),
+  (713,'Liberty','Anderson','male','Pediatrics'),
+  (714,'Jermaine','Ruiz','female','Orthopedics'),
+  (715,'Suki','Valencia','male','Oncology'),
+  (716,'Karen','Alvarado','female','Oncology'),
+  (717,'Raphael','Lancaster','male','Oncology'),
+  (718,'Jorden','Strong','male','Neurology'),
+  (719,'Bert','Wall','female','Orthopedics'),
+  (720,'Kane','Moore','female','Neurology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (721,'Scarlett','Spears','female','Neurology'),
+  (722,'Basil','Jimenez','female','Cardiology'),
+  (723,'Nayda','Graham','female','Neurology'),
+  (724,'Sigourney','Leblanc','female','Cardiology'),
+  (725,'Carl','Lindsey','male','Orthopedics'),
+  (726,'Jana','Mccall','female','Neurology'),
+  (727,'Signe','Sellers','male','Neurology'),
+  (728,'Cora','Martinez','female','Neurology'),
+  (729,'Jaquelyn','Hall','female','Oncology'),
+  (730,'Stewart','Ford','male','Oncology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (731,'Philip','Donaldson','female','Neurology'),
+  (732,'Emerald','Levine','female','Orthopedics'),
+  (733,'Ebony','Espinoza','female','Neurology'),
+  (734,'Sasha','Pittman','male','Pediatrics'),
+  (735,'Yoshio','Ryan','female','Cardiology'),
+  (736,'Jared','Goff','male','Pediatrics'),
+  (737,'Rae','Long','female','Oncology'),
+  (738,'Jerome','Navarro','male','Neurology'),
+  (739,'Nayda','Mayo','male','Orthopedics'),
+  (740,'Maggie','Tillman','male','Orthopedics');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (741,'Martena','Gates','male','Pediatrics'),
+  (742,'Andrew','Hendrix','female','Cardiology'),
+  (743,'Xenos','William','male','Orthopedics'),
+  (744,'Levi','Sargent','female','Orthopedics'),
+  (745,'Elton','Rush','female','Oncology'),
+  (746,'Jonas','Pickett','male','Orthopedics'),
+  (747,'Jaden','Huffman','female','Pediatrics'),
+  (748,'Clementine','Strickland','male','Pediatrics'),
+  (749,'Evan','Vaughan','female','Neurology'),
+  (750,'Hall','Clemons','female','Oncology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (751,'Mallory','Landry','female','Cardiology'),
+  (752,'Brandon','Mayer','female','Neurology'),
+  (753,'Talon','Acevedo','male','Pediatrics'),
+  (754,'Linus','Frederick','female','Oncology'),
+  (755,'Alfonso','Donovan','male','Cardiology'),
+  (756,'Emmanuel','Duncan','female','Pediatrics'),
+  (757,'Robert','Trujillo','female','Pediatrics'),
+  (758,'Rosalyn','Duffy','male','Cardiology'),
+  (759,'Yuli','Kelley','female','Cardiology'),
+  (760,'Lillian','Castillo','male','Neurology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (761,'Sopoline','Craft','male','Orthopedics'),
+  (762,'Melodie','Porter','female','Pediatrics'),
+  (763,'Price','Fernandez','male','Orthopedics'),
+  (764,'Hamilton','Woodward','male','Orthopedics'),
+  (765,'Scarlett','Michael','male','Cardiology'),
+  (766,'Marah','Raymond','female','Pediatrics'),
+  (767,'Kyla','Clarke','female','Neurology'),
+  (768,'Baxter','Dawson','male','Cardiology'),
+  (769,'Nora','Hudson','female','Neurology'),
+  (770,'Nash','Kidd','female','Pediatrics');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (771,'Natalie','Pollard','female','Pediatrics'),
+  (772,'Brennan','Brady','female','Neurology'),
+  (773,'Clio','Ramos','female','Pediatrics'),
+  (774,'Dalton','Heath','female','Cardiology'),
+  (775,'Cullen','Kennedy','female','Neurology'),
+  (776,'Orson','James','male','Oncology'),
+  (777,'Brandon','Berry','female','Pediatrics'),
+  (778,'Imani','Stokes','male','Pediatrics'),
+  (779,'Ahmed','Rosario','female','Orthopedics'),
+  (780,'Aretha','Bean','female','Orthopedics');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (781,'Jameson','Shepherd','male','Oncology'),
+  (782,'Clio','Lancaster','male','Orthopedics'),
+  (783,'Dora','Acosta','female','Cardiology'),
+  (784,'Yeo','Wilson','male','Oncology'),
+  (785,'Blaze','Hahn','female','Neurology'),
+  (786,'Kyra','Lucas','male','Cardiology'),
+  (787,'Zenaida','Wilkinson','male','Oncology'),
+  (788,'Dalton','Perry','male','Oncology'),
+  (789,'Charlotte','Bridges','male','Oncology'),
+  (790,'Kylie','Diaz','male','Neurology');
+INSERT INTO doctor (d_id,d_first_name,d_last_name,gender,specialization)
+VALUES
+  (791,'Craig','Sawyer','male','Pediatrics'),
+  (792,'Joy','Hayden','female','Neurology'),
+  (793,'Vernon','Lindsey','male','Orthopedics'),
+  (794,'Georgia','Madden','male','Pediatrics'),
+  (795,'Jena','Haynes','male','Oncology'),
+  (796,'Nayda','Potts','male','Orthopedics'),
+  (797,'Alden','Landry','female','Oncology'),
+  (798,'Talon','Little','male','Pediatrics'),
+  (799,'Hedy','Chen','female','Oncology'),
+  (800,'Tatiana','Salazar','male','Orthopedics');
