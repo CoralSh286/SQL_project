@@ -1,10 +1,10 @@
-# Maternity Ward Database Project
+# פרויקט בבסיסי נתונים - בית החולים תל השומר, מחלקת מיון
 
-## Authors
-- Shir Perez
-- Yael Izralevitch
+## מגישות
+- קורל שמואלוביץ
+- טלאל הלוי
   
-## Table of Contents 🔗
+## תוכן עניינים 🔗
 1. [Introduction](#introduction)
 2. [Entity-Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
 3. [Data Structure Diagram (DSD)](#data-structure-diagram-dsd)
