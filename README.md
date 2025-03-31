@@ -178,3 +178,11 @@ CREATE TABLE treated_by (
   FOREIGN KEY (t_id) REFERENCES treatment(t_id)
   
 );
+
+## הכנסת הנתונים ב3 שיטות
+
+## דרך Generate Data:
+![insert](images/photo_2025-03-31_13-39-24.jpg)
+
+## דרך Mockaroo:
+![insert](images/photo_2025-03-31_13-39-18.jpg)
