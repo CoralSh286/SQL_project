@@ -59,10 +59,15 @@
 
 ## יצירת הטבלאות:
 CREATE TABLE nurse (
+
   n_id INT PRIMARY KEY NOT NULL,
+  
   n_first_name VARCHAR(50) NOT NULL,
+  
   n_last_name VARCHAR(50) NOT NULL,
+  
   shift_schedule VARCHAR(50) NOT NULL,
+  
   phone_number VARCHAR(20) NOT NULL
 );
 
