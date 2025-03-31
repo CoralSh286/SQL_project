@@ -3,15 +3,8 @@
 ## מגישות
 - קורל שמואלוביץ
 - טלאל הלוי
-  
-## תוכן עניינים 🔗
-1. [Introduction](#introduction)
-2. [Entity-Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
-3. [Data Structure Diagram (DSD)](#data-structure-diagram-dsd)
-4. [Design Decisions](#design-decisions)
-5. [SQL Scripts](#sql-scripts)
-6. [Data Entry Methods](#data-entry-methods)
-7. [Data Backup and Restoration](#data-backup-and-restoration)
+
+  ## שלב א - עיצוב ויצירת בסיס הנתונים, והכנסת הנתונים
 
 ## תיאור הארגון
 
@@ -186,3 +179,19 @@ CREATE TABLE treated_by (
 
 ## דרך Mockaroo:
 ![insert](images/photo_2025-03-31_13-39-18.jpg)
+
+## דרך סקריפט בפייתון:
+![insert](images/photo_2025-03-31_13-39-12.jpg)
+![insert](images/photo_2025-03-31_13-39-07.jpg)
+
+
+## נריץ על מנת לקבל את הנתונים:
+![insert](images/photo_2025-03-31_13-38-59.jpg)
+
+## גיבוי ושחזור הנתונים
+## גיבוי הנתונים:
+![insert](images/photo_2025-03-31_13-38-33.jpg)
+
+# שחזור הנתונים:
+
+![insert](images/photo_2025-03-31_13-38-17.jpg)
