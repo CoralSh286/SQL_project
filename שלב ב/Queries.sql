@@ -124,18 +124,17 @@ WHERE rn = 1;
 
 
 
- מטופלים עם מספר טיפולים שקיבלו וסוג הטיפולים
+סיכום כמות הטיפולים וסוגי הטיפולים לכל מטופל
 
 SELECT 
     p.p_id,
     p.p_first_name,
     p.p_last_name,
-    COUNT(tb.t_id) AS treatment_count,
-    STRING_AGG(t.name, ', ') AS treatments_received
+    (SELECT COUNT(*) FROM treated_by WHERE p_id = p.p_id) AS treatment_count,
+    (SELECT STRING_AGG(t.name, ', ') FROM treated_by tb 
+     JOIN treatment t ON tb.t_id = t.t_id 
+     WHERE tb.p_id = p.p_id) AS treatments_received
 FROM patient p
-LEFT JOIN treated_by tb ON p.p_id = tb.p_id
-LEFT JOIN treatment t ON tb.t_id = t.t_id
-GROUP BY p.p_id, p.p_first_name, p.p_last_name
 ORDER BY treatment_count DESC;
 
 
