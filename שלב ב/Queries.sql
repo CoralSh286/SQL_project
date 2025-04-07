@@ -139,8 +139,6 @@ GROUP BY p.p_id, p.p_first_name, p.p_last_name
 ORDER BY treatment_count DESC;
 
 
-DELETE
-
 מחיקת בדיקות למטופלים בחדרים מסוימים
 
 DELETE FROM examination
@@ -197,7 +195,6 @@ GROUP BY d.d_id, d.d_first_name, d.d_last_name
 ORDER BY num_treatments;
 
 
-UPDATE
 
 עדכון משמרת מצהרים ללילה לאחיות שמטפלות ב2 מטופלים
 
