@@ -429,6 +429,16 @@ CREATE TABLE treated_by (
 
 האילוץ שומר על עקביות ומונע ערכים חסרים בעת הזנת רשומות חדשות.
 
+
+
+## פקודות rollback and commit
+
+## פקודת rollback:
+
+המשמרת המקורית של האחות:
+![ROLLBACK](images/rol1.jpg)
+
+
 ![UPDATE](images/c31.jpg)
 
 
