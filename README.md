@@ -456,3 +456,22 @@ CREATE TABLE treated_by (
 
 בסיס הנתונים חזר להיות כפי שהיה:
 ![ROLLBACK](images/rol5.jpg)
+
+
+
+## פקודת commit:
+
+המשמרת המקורית של האחות:
+![ROLLBACK](images/com1.jpg)
+
+הרצת העדכון:
+![ROLLBACK](images/com2.jpg)
+
+הצגת העדכון:
+![ROLLBACK](images/com3.jpg)
+
+פקודת commit: 
+![ROLLBACK](images/com4.jpg)
+
+בסיס הנתונים אכן נשאר מעודכן:
+![ROLLBACK](images/com5.jpg)
