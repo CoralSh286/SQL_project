@@ -429,6 +429,13 @@ CREATE TABLE treated_by (
 
 האילוץ שומר על עקביות ומונע ערכים חסרים בעת הזנת רשומות חדשות.
 
+![UPDATE](images/c31.jpg)
+
+
+ניתן לראות שההכנסת ברירת מחדל באמת עובדת:
+
+![UPDATE](images/c32.jpg)
+
 
 
 ## פקודות rollback and commit
@@ -438,10 +445,14 @@ CREATE TABLE treated_by (
 המשמרת המקורית של האחות:
 ![ROLLBACK](images/rol1.jpg)
 
+הרצת העדכון:
+![ROLLBACK](images/rol2.jpg)
 
-![UPDATE](images/c31.jpg)
+הצגת העדכון:
+![ROLLBACK](images/rol3.jpg)
 
+פקודת rollback: 
+![ROLLBACK](images/rol4.jpg)
 
-ניתן לראות שההכנסת ברירת מחדל באמת עובדת:
-
-![UPDATE](images/c32.jpg)
+בסיס הנתונים חזר להיות כפי שהיה:
+![ROLLBACK](images/rol5.jpg)
