@@ -132,8 +132,11 @@ SELECT
     p.p_id,
     p.p_first_name,
     p.p_last_name,
-    (SELECT COUNT(*) FROM treated_by WHERE p_id = p.p_id) AS treatment_count,
-    (SELECT STRING_AGG(t.name, ', ') FROM treated_by tb 
+    (SELECT COUNT(*)
+     FROM treated_by
+     WHERE p_id = p.p_id) AS treatment_count,
+    (SELECT STRING_AGG(t.name, ', ')
+     FROM treated_by tb 
      JOIN treatment t ON tb.t_id = t.t_id 
      WHERE tb.p_id = p.p_id) AS treatments_received
 FROM patient p
