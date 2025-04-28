@@ -97,7 +97,9 @@ JOIN performs p ON d.d_id = p.d_id
 GROUP BY d.d_id
 HAVING COUNT(p.t_id) > (
     SELECT AVG(num_treatments) 
-    FROM (SELECT d_id, COUNT(t_id) AS num_treatments FROM performs GROUP BY d_id) AS avg_treatments
+    FROM (SELECT d_id, COUNT(t_id) AS num_treatments 
+        FROM performs
+        GROUP BY d_id) AS avg_treatments
 )
 ORDER BY num_treatments DESC
 LIMIT 5;
