@@ -40,24 +40,24 @@ WHERE Volunteer.VolunteerID = v.VolunteerID;
 
 
 
-נוסיף רופא אחראי עבור כל הכשרה
+-- נוסיף רופא אחראי עבור כל הכשרה
 
-ALTER TABLE Training ADD COLUMN DoctorID INT;
-ALTER TABLE Training
-ADD CONSTRAINT FK_Training_Doctor
-FOREIGN KEY (DoctorID) REFERENCES doctor(d_id);
+-- ALTER TABLE Training ADD COLUMN DoctorID INT;
+-- ALTER TABLE Training
+-- ADD CONSTRAINT FK_Training_Doctor
+-- FOREIGN KEY (DoctorID) REFERENCES doctor(d_id);
 
-UPDATE Training
-SET DoctorID = d.d_id
-FROM (
-  SELECT TrainingID, ROW_NUMBER() OVER (ORDER BY TrainingID) AS rn
-  FROM Training
-) AS t
-JOIN (
-  SELECT d_id, ROW_NUMBER() OVER (ORDER BY d_id) AS rn
-  FROM doctor
-) AS d ON ((t.rn - 1) % (SELECT COUNT(*) FROM doctor) + 1) = d.rn
-WHERE Training.TrainingID = t.TrainingID;
+-- UPDATE Training
+-- SET DoctorID = d.d_id
+-- FROM (
+--   SELECT TrainingID, ROW_NUMBER() OVER (ORDER BY TrainingID) AS rn
+--   FROM Training
+-- ) AS t
+-- JOIN (
+--   SELECT d_id, ROW_NUMBER() OVER (ORDER BY d_id) AS rn
+--   FROM doctor
+-- ) AS d ON ((t.rn - 1) % (SELECT COUNT(*) FROM doctor) + 1) = d.rn
+-- WHERE Training.TrainingID = t.TrainingID;
 
 
 
@@ -103,3 +103,48 @@ JOIN (
   FROM Volunteer
 ) AS v
 ON (p.rn - 1) % (SELECT COUNT(*) FROM Volunteer) + 1 = v.rn;
+
+
+
+
+מיזוג הטבלאות של דוקטור ומנהל לטבלה אחת וקישור המפתחות הזרים בהתאם
+
+ALTER TABLE doctor
+ADD COLUMN email VARCHAR(255) UNIQUE,
+ADD COLUMN phone_number VARCHAR(20);
+
+
+UPDATE doctor
+SET email = CONCAT('doctor', d_id, '@hospital.org'),
+    phone_number = CONCAT('050-000', LPAD(d_id::text, 4, '0'));
+
+
+INSERT INTO doctor (d_id, d_first_name, d_last_name, gender, specialization, email, phone_number)
+SELECT 
+    ManagerID, 
+    FirstName, 
+    LastName, 
+    'male' AS gender, 
+    'General Management' AS specialization, 
+    Email, 
+    PhoneNumber
+FROM manager;
+
+
+ALTER TABLE volunteer
+DROP CONSTRAINT volunteer_managerid_fkey;
+
+ALTER TABLE volunteer
+ADD CONSTRAINT volunteer_doctorid_fkey
+FOREIGN KEY (ManagerID) REFERENCES doctor(d_id) ON DELETE CASCADE;
+
+
+ALTER TABLE project
+DROP CONSTRAINT project_managerid_fkey;
+
+ALTER TABLE project
+ADD CONSTRAINT project_doctorid_fkey
+FOREIGN KEY (ManagerID) REFERENCES doctor(d_id) ON DELETE CASCADE;
+
+
+DROP TABLE Manager;
