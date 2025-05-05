@@ -86,15 +86,15 @@ FROM volunteer_project_training_view
 GROUP BY training_name;
 
 
-SELECT 
-    volunteer_project_training_view.volunteer_first_name, 
-    volunteer_project_training_view.volunteer_last_name, 
-    volunteer_project_training_view.project_name
+SELECT DISTINCT
+    volunteer_first_name, 
+    volunteer_last_name, 
+    project_name
 FROM volunteer_project_training_view
-WHERE volunteer_project_training_view.volunteerId IN (
-    SELECT volunteerId
+WHERE VolunteerID IN (
+    SELECT VolunteerID
     FROM Trained
-    GROUP BY volunteerId
-    HAVING COUNT(trainingId) >= 2
+    GROUP BY VolunteerID
+    HAVING COUNT(TrainingID) >= 2
 )
-ORDER BY volunteer_project_training_view.volunteer_last_name;
+ORDER BY volunteer_last_name;
