@@ -40,27 +40,6 @@ WHERE Volunteer.VolunteerID = v.VolunteerID;
 
 
 
--- נוסיף רופא אחראי עבור כל הכשרה
-
--- ALTER TABLE Training ADD COLUMN DoctorID INT;
--- ALTER TABLE Training
--- ADD CONSTRAINT FK_Training_Doctor
--- FOREIGN KEY (DoctorID) REFERENCES doctor(d_id);
-
--- UPDATE Training
--- SET DoctorID = d.d_id
--- FROM (
---   SELECT TrainingID, ROW_NUMBER() OVER (ORDER BY TrainingID) AS rn
---   FROM Training
--- ) AS t
--- JOIN (
---   SELECT d_id, ROW_NUMBER() OVER (ORDER BY d_id) AS rn
---   FROM doctor
--- ) AS d ON ((t.rn - 1) % (SELECT COUNT(*) FROM doctor) + 1) = d.rn
--- WHERE Training.TrainingID = t.TrainingID;
-
-
-
 נוסיף הכשרה לטבלת הטיפולים (לא חייבת להיות הכשרה עבור כל טיפול)
 
 ALTER TABLE treatment ADD COLUMN TrainingID INT;
