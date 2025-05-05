@@ -18,7 +18,6 @@ JOIN (
 WHERE Project.ProjectID = p.ProjectID;
 
 
-
 נוסיף אחות אחראית לכל מתנדב
 
 ALTER TABLE Volunteer ADD COLUMN NurseID INT;
@@ -92,11 +91,9 @@ ALTER TABLE doctor
 ADD COLUMN email VARCHAR(255) UNIQUE,
 ADD COLUMN phone_number VARCHAR(20);
 
-
 UPDATE doctor
 SET email = CONCAT('doctor', d_id, '@hospital.org'),
     phone_number = CONCAT('050-000', LPAD(d_id::text, 4, '0'));
-
 
 INSERT INTO doctor (d_id, d_first_name, d_last_name, gender, specialization, email, phone_number)
 SELECT 
@@ -109,21 +106,14 @@ SELECT
     PhoneNumber
 FROM manager;
 
-
 ALTER TABLE volunteer
 DROP CONSTRAINT volunteer_managerid_fkey;
-
 ALTER TABLE volunteer
 ADD CONSTRAINT volunteer_doctorid_fkey
 FOREIGN KEY (ManagerID) REFERENCES doctor(d_id) ON DELETE CASCADE;
-
-
 ALTER TABLE project
 DROP CONSTRAINT project_managerid_fkey;
-
 ALTER TABLE project
 ADD CONSTRAINT project_doctorid_fkey
 FOREIGN KEY (ManagerID) REFERENCES doctor(d_id) ON DELETE CASCADE;
-
-
 DROP TABLE Manager;
