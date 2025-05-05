@@ -581,6 +581,7 @@ CREATE TABLE treated_by (
 ה. לאחר שכל התלות הוסרה, נמחקה טבלת manager שכן כל המידע שבה מוזג ונקלט בטבלת doctor.
 
  ![img](images/img5.jpg) 
+ ![img](images/img6.jpg) 
 
  
 
