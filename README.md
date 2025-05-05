@@ -502,3 +502,104 @@ CREATE TABLE treated_by (
   
 ג. הוספנו מפתחות לפי המידע בטבלה.
    ![ERD](images/newERD.jpg)   
+
+
+## יצירת ERD משולב של שני בסיסי הנתונים:
+
+על מנת למזג את שני בסיסי הנתונים לבסיס נתונים אחד בצורה המיטבית, הלחטנו להוסיף את השינויים הבאים:
+
+א. נוסיף טיפול לטבלה של הפרויקטים, כלומר כך נדע עבור כל פרויקט לאיזה טיפול הוא משוייך.
+
+ב. נוסיף אחות אחראית לטבלת המתנדבים.
+
+ג. נוסיף הכשרה לטבלת הטיפולים (לא חובה הכשרה עבור כל טיפול).
+
+ד. ניצור טבלה חדשה של חולים ומתנדבים - לכל חולה יכולים להיות כמה מתנדבים שמטפלים בו ולכל מתנדב יכולים להיות כמה חולים שמטפל בהם.
+
+ה. נמזג את הטבלאות של רופא ומנהל לטבלה אחת (כי בעצם המנהלים במקרה שלנו הם רופאים).
+
+
+ ![ERD](images/finalERD.jpg)  
+
+
+ ## יצירת DSD משולב של שני בסיסי הנתונים:
+
+ מתוך ה ERD שיצרנו, ניצור את ה DSD המתאים:
+
+
+  ![ERD](images/finalDSD.jpg) 
+
+
+  ## הסבר על התהליך והפקודות לשילוב שני בסיסי הנתונים:
+
+## עבור סעיפים א, ב, ג:
+הוספנו עמודה חדשה לטבלאות על ידי הפקודה ALTER TABLE וקישרנו את העמודה החדשה שתהיה מפתח זר לטבלה הרצויה שממנה נרצה למלא את העמודה, ומילאנו את העמודה עבור כל טבלה על ידי פקודת UPDATE. (מילוי העמודה היה כמובן מהטבלה הרצויה ולא נתונים חדשים)
+
+הפקדות:
+
+
+נוסיף טיפול לטבלה של הפרויקטים - כלומר כל פרויקט לאיזה טיפול הוא משוייך
+
+ALTER TABLE Project ADD TreatmentID INT;
+ALTER TABLE Project ADD CONSTRAINT FK_Project_Treatment
+FOREIGN KEY (TreatmentID) REFERENCES treatment(t_id);
+
+UPDATE Project
+SET TreatmentID = t.t_id
+FROM (
+  SELECT ProjectID, ROW_NUMBER() OVER (ORDER BY ProjectID) AS rn
+  FROM Project
+) AS p
+JOIN (
+  SELECT t_id, ROW_NUMBER() OVER (ORDER BY t_id) AS rn
+  FROM treatment
+) AS t ON p.rn = t.rn
+WHERE Project.ProjectID = p.ProjectID;
+
+
+
+נוסיף אחות אחראית לכל מתנדב
+
+ALTER TABLE Volunteer ADD COLUMN NurseID INT;
+ALTER TABLE Volunteer
+ADD CONSTRAINT FK_Volunteer_Nurse
+FOREIGN KEY (NurseID) REFERENCES nurse(n_id);
+
+UPDATE Volunteer
+SET NurseID = n.n_id
+FROM (
+  SELECT VolunteerID, ROW_NUMBER() OVER (ORDER BY VolunteerID) AS rn
+  FROM Volunteer
+) AS v
+JOIN (
+  SELECT n_id, ROW_NUMBER() OVER (ORDER BY n_id) AS rn
+  FROM nurse
+) AS n ON v.rn = n.rn
+WHERE Volunteer.VolunteerID = v.VolunteerID;
+
+
+
+נוסיף הכשרה לטבלת הטיפולים (לא חייבת להיות הכשרה עבור כל טיפול)
+
+ALTER TABLE treatment ADD COLUMN TrainingID INT;
+ALTER TABLE treatment
+ADD CONSTRAINT FK_Treatment_Training
+FOREIGN KEY (TrainingID) REFERENCES Training(TrainingID);
+
+UPDATE treatment
+SET TrainingID = tr.TrainingID
+FROM (
+  SELECT t_id, ROW_NUMBER() OVER (ORDER BY t_id) AS rn
+  FROM treatment
+) AS t
+JOIN (
+  SELECT TrainingID, ROW_NUMBER() OVER (ORDER BY TrainingID) AS rn
+  FROM Training
+) AS tr ON t.rn = tr.rn
+WHERE treatment.t_id = t.t_id;
+
+
+
+## עבור סעיף ד:
+
+יצרנו טבלה חדשה על ידי הפקודה CREATE TABLE, ומילאנו את הרשומות בטבלה מהמפתחות של הטבלאות של מתנדבים ומטופלים. כמובן שקישרנו את המפתחות להיות מפתחות זרים.
