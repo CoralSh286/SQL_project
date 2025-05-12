@@ -86,15 +86,13 @@ FROM volunteer_project_training_view
 GROUP BY training_name;
 
 
-SELECT DISTINCT
+SELECT 
     volunteer_first_name, 
     volunteer_last_name, 
-    project_name
+    COUNT(DISTINCT training_name) AS num_trainings,
+    COUNT(DISTINCT project_name) AS num_projects
 FROM volunteer_project_training_view
-WHERE VolunteerID IN (
-    SELECT VolunteerID
-    FROM Trained
-    GROUP BY VolunteerID
-    HAVING COUNT(TrainingID) >= 2
-)
-ORDER BY volunteer_last_name;
+GROUP BY volunteer_first_name, volunteer_last_name
+HAVING COUNT(DISTINCT training_name) > 1 AND COUNT(DISTINCT project_name) > 1
+ORDER BY num_trainings DESC;
+
