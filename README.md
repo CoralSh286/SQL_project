@@ -649,7 +649,7 @@ CREATE TABLE treated_by (
 
  הרצת ה-view:
 
-  ![img](images/runview1.jpg) 
+  ![img](images/v1.jpg) 
 
   שאילתה ראשונה:
 
@@ -657,7 +657,7 @@ CREATE TABLE treated_by (
   
   מבצעת קיבוץ לפי מזהה הרופא ושמו, ומחשבת את מספר המטופלים הייחודיים באמצעות COUNT(DISTINCT p_id). לבסוף, התוצאה ממוינת לפי מספר המטופלים בסדר יורד, כך שהרופא שטיפל במספר המטופלים הרב ביותר יופיע ראשון.
 
- ![img](images/v1q1.jpg) 
+ ![img](images/v11.jpg) 
 
 
  שאילתה שניה:
@@ -665,7 +665,7 @@ CREATE TABLE treated_by (
 
 וסופרת את מספר הרשומות עבור כל שילוב של טיפול ורופא בעזרת COUNT(*). לבסוף, התוצאה ממוינת בסדר יורד לפי מספר הפעמים שהטיפול בוצע, כך שהשילובים הנפוצים ביותר של רופא וטיפול יוצגו בראש הרשימה.
 
- ![img](images/v1q2.jpg) 
+ ![img](images/v12.jpg) 
 
 
 
@@ -691,8 +691,8 @@ CREATE TABLE treated_by (
 
 
  הרצת ה-view:
- ![img](images/view2run1.jpg)
- ![img](images/view2run2.jpg)
+ ![img](images/v2r1.jpg)
+ ![img](images/v2r2.jpg)
  
  
 שאילתה ראשונה:
@@ -703,7 +703,7 @@ CREATE TABLE treated_by (
 
 כך ניתן לראות איזו הכשרה הייתה הפופולרית ביותר או הנפוצה ביותר בקרב המתנדבים.
 
-   ![img](images/v2q1.jpg) 
+   ![img](images/v21.jpg) 
 
 
  שאילתה שניה:
@@ -712,4 +712,4 @@ CREATE TABLE treated_by (
  
  עבור כל מתנדב היא סופרת את מספר ההכשרות והפרויקטים הייחודיים שלו. התוצאה ממוינת בסדר יורד לפי מספר ההכשרות, כך שהמתנדבים עם הכי הרבה הכשרות יופיעו ראשונים.
 
-   ![img](images/select2.jpg) 
+   ![img](images/select22.jpg) 
