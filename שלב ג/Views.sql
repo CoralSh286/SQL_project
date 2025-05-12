@@ -61,8 +61,8 @@ SELECT
     vt.TypeName AS volunteer_type,
     p.ProjectName AS project_name,
     t.TrainingName AS training_name,
-    m.FirstName AS manager_first_name,
-    m.LastName AS manager_last_name
+    d.d_first_name AS doctor_first_name,
+    d.d_last_name AS doctor_last_name
 FROM 
     Volunteer v
 JOIN
@@ -72,7 +72,7 @@ JOIN
 JOIN
     Project p ON at.ProjectID = p.ProjectID
 JOIN
-    Manager m ON p.ManagerID = m.ManagerID
+    doctor d ON p.doc_ManagerID = d.d_id
 JOIN
     Trained tr ON v.VolunteerID = tr.VolunteerID
 JOIN 
