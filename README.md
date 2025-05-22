@@ -743,3 +743,22 @@ CREATE TABLE treated_by (
 ![img](images/f21.jpg) 
 ![img](images/f22.jpg) 
 ![img](images/f23.jpg) 
+
+
+## פרוצדורה 1
+
+הפרוצדורה assign_volunteer_to_patient_new משמשת לשיוך מתנדב למטופל באופן בטוח. היא מקבלת מזהי מתנדב ומטופל, בודקת אם שניהם קיימים במערכת, ואם המתנדב כבר משויך למטופל. במידה והשיוך טרם קיים – מתבצע INSERT לטבלת הקשרים volunteerfor. נעשה שימוש בבדיקות קיום עם IF NOT EXISTS, בשאילתת SELECT INTO, בטיפול בשגיאות (EXCEPTION) כולל הפרות של מפתחות זרים או ייחודיים, וב־RAISE NOTICE לצורך תיעוד פעולות ושלבי ביניים.
+
+
+![img](images/p11.jpg) 
+![img](images/p12.jpg) 
+
+
+## פרוצדורה 2
+
+הפרוצדורה update_nurse_shift_new מעדכנת את משמרת האחות לפי מספר טלפון, ומשייכת את מטופליה לאחיות אחרות בהתאם למשמרת החדשה. נעשה שימוש ב־SELECT INTO לשליפת נתוני אחות, בלולאת FOR על מטופלים, וב־RECORD לשמירת נתוני ביניים. בנוסף, יש שימוש בתנאים (IF, IF NOT EXISTS) למציאת אחות חלופית וביצוע INSERT לרישום בדיקה חדשה. לבסוף, מתבצע UPDATE למשמרת האחות המקורית. תהליך העבודה מתועד עם RAISE NOTICE, וכולל טיפול בשגיאות דרך EXCEPTION, כולל ROLLBACK במקרה הצורך.
+
+![img](images/p21.jpg) 
+![img](images/p22.jpg) 
+![img](images/p23.jpg) 
+![img](images/p24.jpg) 
