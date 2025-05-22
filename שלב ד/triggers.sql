@@ -52,7 +52,6 @@ BEGIN
     IF v_shift_count < 119 THEN
         RAISE NOTICE 'Warning: fewer than 120 nurses in shift %', NEW.shift_schedule;
     END IF;
-    
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
