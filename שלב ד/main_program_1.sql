@@ -15,5 +15,5 @@ BEGIN
     CLOSE vol_cursor;
 
   
-    CALL assign_volunteer_to_patient_new(3, 3);
+    CALL assign_volunteer_to_patient_new(301, 128);
 END $$;
