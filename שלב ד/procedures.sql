@@ -5,40 +5,38 @@ LANGUAGE plpgsql AS $$
 DECLARE
     existing_count INTEGER;
 BEGIN
-    -- Basic check that patient and volunteer exist
+    -- Check if the patient exists
     IF NOT EXISTS (SELECT 1 FROM patient WHERE p_id = p_patient_id) THEN
-        RAISE NOTICE 'Patient does not exist';
-        RETURN;
+        RAISE EXCEPTION 'Patient with ID % does not exist', p_patient_id;
     END IF;
-    
+
+    -- Check if the volunteer exists
     IF NOT EXISTS (SELECT 1 FROM volunteer WHERE volunteerid = p_volunteer_id) THEN
-        RAISE NOTICE 'Volunteer does not exist';
-        RETURN;
+        RAISE EXCEPTION 'Volunteer with ID % does not exist', p_volunteer_id;
     END IF;
-    
-    -- Check if assignment already exists
+
+    -- Check if the assignment already exists
     SELECT COUNT(*) INTO existing_count
     FROM volunteerfor
     WHERE patientid = p_patient_id AND volunteerid = p_volunteer_id;
-    
+
     IF existing_count > 0 THEN
-        RAISE NOTICE 'Volunteer is already assigned to this patient';
-        RETURN;
+        RAISE EXCEPTION 'Volunteer % is already assigned to patient %', p_volunteer_id, p_patient_id;
     END IF;
-    
-    -- Add new assignment
+
+    -- Attempt to insert a new assignment
     INSERT INTO volunteerfor (patientid, volunteerid)
     VALUES (p_patient_id, p_volunteer_id);
-    
-    RAISE NOTICE 'Volunteer % assigned to patient %', p_volunteer_id, p_patient_id;
-    
+
+    RAISE NOTICE 'Volunteer % successfully assigned to patient %', p_volunteer_id, p_patient_id;
+
 EXCEPTION
     WHEN unique_violation THEN
-        RAISE NOTICE 'Volunteer is already assigned to this patient (unique constraint violation)';
+        RAISE EXCEPTION 'Assignment failed: volunteer % is already assigned to patient % (unique constraint)', p_volunteer_id, p_patient_id;
     WHEN foreign_key_violation THEN
-        RAISE NOTICE 'Foreign key error - invalid data';
+        RAISE EXCEPTION 'Assignment failed: foreign key violation - invalid patient or volunteer ID';
     WHEN OTHERS THEN
-        RAISE NOTICE 'Unexpected error: %', SQLERRM;
+        RAISE EXCEPTION 'Unexpected error: %', SQLERRM;
 END;
 $$;
 
