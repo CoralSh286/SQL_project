@@ -919,4 +919,4 @@ hospital_management/
 
 ## תמונות מסך של האפליקציה
 
-![img](שלב ה/Images/1.jpg) 
+![img](images/1.jpg) 
