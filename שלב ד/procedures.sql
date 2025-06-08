@@ -54,10 +54,11 @@ DECLARE
     v_shift VARCHAR(50);
     v_new_shift VARCHAR(50);
 BEGIN
-
-    SELECT shift_schedule INTO v_shift
+    -- Get current shift with STRICT
+    SELECT shift_schedule INTO STRICT v_shift
     FROM nurse WHERE phone_number = p_phone;
     
+    -- Determine new shift
     IF UPPER(v_shift) = 'MORNING' THEN
         v_new_shift := 'afternoon';
     ELSIF UPPER(v_shift) = 'AFTERNOON' THEN
@@ -66,15 +67,19 @@ BEGIN
         v_new_shift := 'Morning';
     END IF;
     
+    -- Update shift in database
     UPDATE nurse SET shift_schedule = v_new_shift
     WHERE phone_number = p_phone;
     
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
-        RAISE NOTICE 'אחות לא קיימת';
+        RAISE NOTICE 'Nurse does not exist';
+        ROLLBACK;
+    WHEN TOO_MANY_ROWS THEN
+        RAISE NOTICE 'Multiple nurses found with same phone number';
         ROLLBACK;
     WHEN OTHERS THEN
-        RAISE NOTICE 'שגיאה: %', SQLERRM;
+        RAISE NOTICE 'Error: %', SQLERRM;
         ROLLBACK;
 END;
 $$;
