@@ -3,38 +3,35 @@
 CREATE OR REPLACE PROCEDURE assign_volunteer_to_patient_new(p_patient_id INTEGER, p_volunteer_id INTEGER)
 LANGUAGE plpgsql AS $$
 DECLARE
+    v_patient_exists INTEGER;
+    v_volunteer_exists INTEGER;
     existing_count INTEGER;
 BEGIN
-    -- Check if the patient exists
-    IF NOT EXISTS (SELECT 1 FROM patient WHERE p_id = p_patient_id) THEN
-        RAISE EXCEPTION 'Patient with ID % does not exist', p_patient_id;
-    END IF;
-
-    -- Check if the volunteer exists
-    IF NOT EXISTS (SELECT 1 FROM volunteer WHERE volunteerid = p_volunteer_id) THEN
-        RAISE EXCEPTION 'Volunteer with ID % does not exist', p_volunteer_id;
-    END IF;
-
+    SELECT 1 INTO STRICT v_patient_exists
+    FROM patient WHERE p_id = p_patient_id;
+    
+    SELECT 1 INTO STRICT v_volunteer_exists
+    FROM volunteer WHERE volunteerid = p_volunteer_id;
+    
     -- Check if the assignment already exists
     SELECT COUNT(*) INTO existing_count
     FROM volunteerfor
     WHERE patientid = p_patient_id AND volunteerid = p_volunteer_id;
-
+    
     IF existing_count > 0 THEN
-        RAISE EXCEPTION 'Volunteer % is already assigned to patient %', p_volunteer_id, p_patient_id;
+        RAISE NOTICE 'Volunteer % is already assigned to patient %', p_volunteer_id, p_patient_id;
+        RETURN;
     END IF;
-
+    
     -- Attempt to insert a new assignment
     INSERT INTO volunteerfor (patientid, volunteerid)
     VALUES (p_patient_id, p_volunteer_id);
-
+    
     RAISE NOTICE 'Volunteer % successfully assigned to patient %', p_volunteer_id, p_patient_id;
-
+    
 EXCEPTION
-    WHEN unique_violation THEN
-        RAISE EXCEPTION 'Assignment failed: volunteer % is already assigned to patient % (unique constraint)', p_volunteer_id, p_patient_id;
-    WHEN foreign_key_violation THEN
-        RAISE EXCEPTION 'Assignment failed: foreign key violation - invalid patient or volunteer ID';
+    WHEN NO_DATA_FOUND THEN
+        RAISE EXCEPTION 'Patient ID % or Volunteer ID % does not exist', p_patient_id, p_volunteer_id;
     WHEN OTHERS THEN
         RAISE EXCEPTION 'Unexpected error: %', SQLERRM;
 END;
