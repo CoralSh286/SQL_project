@@ -748,8 +748,8 @@ CREATE TABLE treated_by (
 הפרוצדורה assign_volunteer_to_patient_new משמשת לשיוך מתנדב למטופל באופן בטוח. היא מקבלת מזהי מתנדב ומטופל, בודקת אם שניהם קיימים במערכת, ואם המתנדב כבר משויך למטופל. במידה והשיוך טרם קיים – מתבצע INSERT לטבלת הקשרים volunteerfor. נעשה שימוש בבדיקות קיום עם IF NOT EXISTS, בשאילתת SELECT INTO, בטיפול בשגיאות (EXCEPTION) כולל הפרות של מפתחות זרים או ייחודיים, וב־RAISE NOTICE לצורך תיעוד פעולות ושלבי ביניים.
 
 
-![img](images/p11n.jpg) 
-![img](images/p12n.jpg) 
+![img](images/pat1.jpg) 
+![img](images/pat2.jpg) 
 
 
 ## פרוצדורה 2
