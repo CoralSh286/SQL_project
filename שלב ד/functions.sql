@@ -66,7 +66,7 @@ DECLARE
     v_complexity_desc VARCHAR(20);
 BEGIN
     -- Get doctor's specialization
-    SELECT specialization INTO v_specialization 
+    SELECT specialization INTO strict v_specialization 
     FROM doctor WHERE d_id = p_doctor_id;
     
     RAISE NOTICE 'Specialization: %', v_specialization;
