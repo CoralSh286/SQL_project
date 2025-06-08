@@ -53,19 +53,11 @@ LANGUAGE plpgsql AS $$
 DECLARE
     v_shift VARCHAR(50);
     v_new_shift VARCHAR(50);
-    v_nurse_id INTEGER;
-    v_nurse_name VARCHAR(101);
-    patient_rec RECORD;
-    new_nurse_rec RECORD;
-    v_patient_count INTEGER := 0;
-    v_reassigned_count INTEGER := 0;
 BEGIN
-    -- Get nurse information
-    SELECT n_id, n_first_name  ' '  n_last_name, shift_schedule 
-    INTO v_nurse_id, v_nurse_name, v_shift
+
+    SELECT shift_schedule INTO v_shift
     FROM nurse WHERE phone_number = p_phone;
     
-    -- Determine the new shift
     IF UPPER(v_shift) = 'MORNING' THEN
         v_new_shift := 'afternoon';
     ELSIF UPPER(v_shift) = 'AFTERNOON' THEN
@@ -74,64 +66,15 @@ BEGIN
         v_new_shift := 'Morning';
     END IF;
     
-    -- Find patients that the nurse examines
-    FOR patient_rec IN 
-        SELECT p.p_id, p.p_first_name, p.p_last_name
-        FROM patient p
-        JOIN examination e ON p.p_id = e.p_id
-        WHERE e.n_id = v_nurse_id
-    LOOP
-        v_patient_count := v_patient_count + 1;
-        
-        -- Find another nurse in the same new shift to handle the patient
-        SELECT n.n_id, n.n_first_name, n.n_last_name 
-        INTO new_nurse_rec
-        FROM nurse n
-        WHERE n.shift_schedule = v_new_shift
-          AND n.n_id != v_nurse_id
-          AND NOT EXISTS (
-             SELECT 1 FROM examination e2
-             WHERE e2.p_id = patient_rec.p_id AND e2.n_id = n.n_id
-          )
-        LIMIT 1;
-        
-        -- If a suitable nurse is found, try to assign the patient
-        IF FOUND THEN
-            -- Check if there's already an examination record
-            IF NOT EXISTS (
-                SELECT 1 FROM examination
-                WHERE p_id = patient_rec.p_id AND n_id = new_nurse_rec.n_id
-            ) THEN
-                -- Add a new examination record
-                INSERT INTO examination (p_id, n_id)
-                VALUES (patient_rec.p_id, new_nurse_rec.n_id);
-                
-                v_reassigned_count := v_reassigned_count + 1;
-                
-                RAISE NOTICE 'Patient % % (ID: %) assigned to nurse % % after shift change',
-                          patient_rec.p_first_name,
-                          patient_rec.p_last_name,
-                          patient_rec.p_id,
-                          new_nurse_rec.n_first_name,
-                          new_nurse_rec.n_last_name;
-            END IF;
-        END IF;
-    END LOOP;
-    
-    -- Update the shift in the database
     UPDATE nurse SET shift_schedule = v_new_shift
     WHERE phone_number = p_phone;
     
-    RAISE NOTICE '';
-    RAISE NOTICE 'Shift for % successfully updated from % to %', v_nurse_name, v_shift, v_new_shift;
-    RAISE NOTICE 'Summary: % patients, % reassigned', v_patient_count, v_reassigned_count;
-               
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
-        RAISE NOTICE 'Nurse not found';
+        RAISE NOTICE 'אחות לא קיימת';
         ROLLBACK;
     WHEN OTHERS THEN
-        RAISE NOTICE 'Error: %', SQLERRM;
+        RAISE NOTICE 'שגיאה: %', SQLERRM;
         ROLLBACK;
 END;
 $$;
